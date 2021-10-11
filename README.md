@@ -10,7 +10,7 @@
 
 <p align="center">
 
-<img src="https://github.com/T-Dynamos/Infector/raw/main/IMG_20210921_112140.jpg"/>
+<img src="https://github.com/T-Dynamos/T-Dynamos/raw/main/bin/20211011_213055.png"/>
 
 
 
