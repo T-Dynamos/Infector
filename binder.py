@@ -81,7 +81,7 @@ con = f"""
 ║ {G}Baapg      = {B}github.com/Vertlee              {C}║
 ║ {G}Nitro      = {B}github.com/noob-hackers         {C}║
 ║ {G}Pushpander = {B}github.com/Pushpanderindia      {C}║
-║ {G}S.V Group  = {B}github.com/omkar                {C}║
+║ {G}S.V Group  = {B}http://github.com/sandovarghese511{C} ║
 {C}╚══════════════════════════════════════════════╝
     {Fore.WHITE+Back.LIGHTBLACK_EX} MADE BY COMMUNITY , MADE FOR COMMUNITY {Back.RESET}""" 
 logo = f"""
