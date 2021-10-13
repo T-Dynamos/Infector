@@ -46,6 +46,7 @@ M = Fore.MAGENTA
 W = Fore.WHITE
 print(Style.BRIGHT)
 pwd=os.getcwd()
+os.system('rm android_payload.apk > /dev/null 2&>1 ')
 def syst():
 	linux = os.path.isfile('/usr/bin/env')
 	win = os.path.isfile('C:')
