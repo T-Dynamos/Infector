@@ -22,7 +22,7 @@
 # If you want credits in this code then see your face idiot
 # Don't try to copy the code . In code there is a online command that is exeuted to keep it safe
 
-version = '2.0'
+version = '3.0'
 import re
 import os
 import sys
@@ -148,7 +148,7 @@ def check():
     print(f"{con+Y}\n\n{Y}")
     head("Checking for Dependencies \n")
     print(f"{YELLOW}\n[*] Checking : APKTool")
-    apktool = os.system("which apktool > /dev/null")
+    apktool = os.system("command -v apktool > /dev/null")
     if apktool == 0:
         print(f"{GREEN}[+] APKTool - OK")
     else:
@@ -166,7 +166,7 @@ def check():
             return check()
                     
     print(f"{YELLOW}\n[*] Checking : Jarsigner")
-    jarsigner = os.system("which jarsigner > /dev/null")
+    jarsigner = os.system("command -v jarsigner > /dev/null")
     if jarsigner == 0:
         print(f"{GREEN}[+] Jarsigner - OK")
     else:
@@ -179,7 +179,7 @@ def check():
 
 
     print(f"{YELLOW}\n[*] Checking : APKsigner")
-    apksigner = os.system("which apksigner > /dev/null")
+    apksigner = os.system("command -v apksigner > /dev/null")
     if apksigner == 0:
         print(f"{GREEN}[+] APKsigner - OK")
     else:
@@ -191,7 +191,7 @@ def check():
             return check()
        
     print(f"{YELLOW}\n[*] Checking : ZipAlign")
-    zipalign = os.system("which zipalign > /dev/null")
+    zipalign = os.system("command -v zipalign > /dev/null")
     if zipalign == 0:
         print(f"{GREEN}[+] ZipAlign - OK")
     else:
@@ -202,7 +202,7 @@ def check():
             os.system("apt-get install aapt -y ")
             return check()
     print(f"{YELLOW}\n[*] Checking : Metasploit")
-    zipalign = os.system("which msfvenom > /dev/null")
+    zipalign = os.system("command -v msfvenom > /dev/null")
     if zipalign == 0:
         print(f"{GREEN}[+] Metasploit - OK")
     else:
