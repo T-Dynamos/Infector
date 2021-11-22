@@ -68,10 +68,10 @@ Infector is a python3 based script which is officially made for linux based dist
 - [x] Shuffles the Permissions of Meterpreter APK for AV Evasion
 - [x] Changes the default foldername and filenames which are being flagged by AV
 
-- [+] 99.99% Works!
-- [+] Metaspoit Moved in Random Locations !
-- [+] Avast Bypassed !
-- [+] Easy for Beginners !
+- [X] 99.99% Works!
+- [X] Metaspoit Moved in Random Locations !
+- [X] Avast Bypassed !
+- [X] Easy for Beginners !
 
 ## INSTALLATION [Termux] :
 
