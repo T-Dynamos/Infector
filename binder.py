@@ -124,8 +124,7 @@ def ver_check():
 		ver_sc = ver_rqst.status_code
 		if ver_sc == 200:
 			github_ver = ver_rqst.text
-			github_ver = github_ver.strip()
-			if int(version) == int(github_ver):
+			if version  == github_ver:
 				print(C + '[' + G + ' Up-To-Date ' + C +']' + '\n')
 			else:
 				print(C + '[' + G + ' Available : {} '.format(github_ver) + C + ']' + '\n')
