@@ -87,14 +87,10 @@ Infector is a python3 based script which is officially made for linux based dist
 * `python3 binder.py`
 
 
-## SCREEN SHOTS [Termux]
-
-<br>
-<p align="center">
-<img width="50%" src="https://github.com/T-Dynamos/Infector/raw/main/IMG_20210921_110233.jpg"/>
-<img width="45%" src="https://raw.githubusercontent.com/T-Dynamos/Infector/main/Screenshot_2021-09-17-13-20-53-966_com.termux.jpg"/>
-</p>
-
+## Screenshot
+| Front View | Sample Feature	|
+| ------------  | ------------ |
+|![Index](https://github.com/T-Dynamos/T-Dynamos/raw/main/bin/Screenshot_2021-11-21-17-27-12-226_com.termux.jpg)|![f](https://github.com/T-Dynamos/T-Dynamos/raw/main/bin/Screenshot_2021-11-21-17-29-42-360_com.termux.jpg)
 
 ## WARNING : 
 ***This tool is only for educational purpose. If you use this tool for other purposes except education we will not be responsible in such cases.***
