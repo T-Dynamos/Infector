@@ -55,11 +55,23 @@ Infector is a python3 based script which is officially made for linux based dist
 * storage 1024 MB
 * Python3
 
-## FEATURES :
-* [+] 99.99% Works!
-* [+] Metaspoit Moved in Random Locations !
-* [+] Avast Bypassed !
-* [+] Easy for Beginners !
+
+## Features
+- [x] Fully Automate Payload Creation Using MSFvenom
+- [x] Creates a handler.rc File 
+- [x] Undetectable
+- [x] Ofusticate Meterpreter APK
+- [x] Binds/Embeds Meterpreter APK with Any Legitimate APK 
+- [x] Automatically Generates a Key which is used in signing
+- [x] Capable to Sign APK Using **Jarsigner** or **APKsigner**
+- [x] Zipalign the Signed APK
+- [x] Shuffles the Permissions of Meterpreter APK for AV Evasion
+- [x] Changes the default foldername and filenames which are being flagged by AV
+
+- [+] 99.99% Works!
+- [+] Metaspoit Moved in Random Locations !
+- [+] Avast Bypassed !
+- [+] Easy for Beginners !
 
 ## INSTALLATION [Termux] :
 
