@@ -93,7 +93,7 @@ con = f"""
 ║ {G}Ansh       = {B}github.com/T_dynamos            {C}║
 ║ {G}Baapg      = {B}github.com/Vertlee              {C}║
 ║ {G}Nitro      = {B}github.com/noob-hackers         {C}║
-║ {G}Pushpander = {B}github.com/Pushpanderindia      {C}║
+║ {G}Pushpander = {B}github.com/PushpenderIndia      {C}║
 ║ {G}Sando      = {B}github.com/sandovarghese511    {C} ║
 {C}╚══════════════════════════════════════════════╝
     {Fore.WHITE+Back.LIGHTBLACK_EX} MADE BY COMMUNITY , MADE FOR COMMUNITY {Back.RESET}""" 
