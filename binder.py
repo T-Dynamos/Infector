@@ -91,7 +91,7 @@ BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, END = '\33[94m', '\033[91m', '\33[97m'
 con = f"""
 {C}╔══════════════════════════════════════════════╗
 ║ {G}Ansh       = {B}github.com/T_dynamos            {C}║
-║ {G}Baapg      = {B}github.com/Vertlee              {C}║
+║ {G}Baapg      = {B}github.com/Vretlee              {C}║
 ║ {G}Nitro      = {B}github.com/noob-hackers         {C}║
 ║ {G}Pushpander = {B}github.com/PushpenderIndia      {C}║
 ║ {G}Sando      = {B}github.com/sandovarghese511    {C} ║
