@@ -22,7 +22,7 @@
 # If you want credits in this code then see your face idiot
 # Don't try to copy the code . In code there is a online command that is exeuted to keep it safe
 
-version = '3.0'
+version = 3
 import re
 import os
 import sys
@@ -125,7 +125,7 @@ def ver_check():
 		if ver_sc == 200:
 			github_ver = ver_rqst.text
 			github_ver = github_ver.strip()
-			if version == github_ver:
+			if int(version) == int(github_ver):
 				print(C + '[' + G + ' Up-To-Date ' + C +']' + '\n')
 			else:
 				print(C + '[' + G + ' Available : {} '.format(github_ver) + C + ']' + '\n')
