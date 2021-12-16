@@ -31,7 +31,7 @@ import fnmatch
 import random
 try:
 	from colorama import Fore,Back,Style
-except Exceptation:
+except Exception:
 	os.system('pip install colorama')
 from colorama import Fore,Back,Style
 R = Fore.RED
