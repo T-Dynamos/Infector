@@ -116,7 +116,7 @@ def captureLauncher():
         return launcherActivity1
     else:
         pass
-     launcherActivity1 = (pwd+"/normal_apk/smali_classes2/"+test)
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes2/"+test)
     if os.path.exists(launcherActivity1):
         return launcherActivity1
     else:
@@ -157,7 +157,7 @@ def captureLauncher():
         return launcherActivity1
     else:
         pass
-     launcherActivity1 = (pwd+"/normal_apk/smali_classes2/"+test2)
+    launcherActivity1 = (pwd+"/normal_apk/smali_classes2/"+test2)
     if os.path.exists(launcherActivity1):
         return launcherActivity1
     else:
@@ -187,8 +187,8 @@ def captureLauncher():
         return launcherActivity1
     else:
         pass
-    code2 = [1-:]code2    
-    if "MainActivity" in or code2 or "MainActivity" in code or "SplashScreen" in code2 or "SplashScreen" in code:
+    code2 = code2[1:]  
+    if "MainActivity" in code2 or "MainActivity" in code or "SplashScreen" in code2 or "SplashScreen" in code:
         test = "MainActivity.smali"
         test2 = "SplashScreen.smali"
         files = []
